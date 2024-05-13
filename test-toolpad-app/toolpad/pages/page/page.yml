@@ -1,0 +1,261 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mui/mui-toolpad/v0.1.54/docs/schemas/v1/definitions.json#properties/Page
+
+apiVersion: v1
+kind: page
+spec:
+  title: Default page
+  alias:
+    - sUfLWjX
+  content:
+    - component: Text
+      name: text
+      props:
+        value: Mes Taches
+      layout:
+        horizontalAlign: center
+    - component: DataGrid
+      name: dataGrid
+    - component: Checkbox
+      name: switch
+      props:
+        mode: switch
+        label: Terminer
+    - component: Text
+      name: text14
+      layout:
+        horizontalAlign: center
+      props:
+        value: Utilisateur
+    - component: PageRow
+      name: pageRow1
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text12
+          layout:
+            columnSize: 1
+            horizontalAlign: end
+          props:
+            value: courriel
+        - component: TextField
+          name: textField1
+          layout:
+            columnSize: 1
+    - component: PageRow
+      name: pageRow5
+      props:
+        justifyContent: start
+      children:
+        - component: Text
+          name: text13
+          layout:
+            columnSize: 1
+            horizontalAlign: end
+          props:
+            value: mot de passe
+        - component: TextField
+          name: textField11
+    - component: Text
+      name: text1
+      props:
+        value: Creer une Tâche
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow
+      props:
+        justifyContent: start
+      children:
+        - component: TextField
+          name: textField
+          layout:
+            horizontalAlign: end
+        - component: Button
+          name: button
+          props:
+            content: Creer
+    - component: Text
+      name: text2
+      props:
+        value: Trouver tout les tâches
+      layout:
+        horizontalAlign: center
+    - component: Button
+      name: button1
+      props:
+        content: Trouver
+      layout:
+        horizontalAlign: center
+        verticalAlign: center
+    - component: Text
+      name: text3
+      props:
+        value: modifier une tâche
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow2
+      props:
+        justifyContent: start
+      children:
+        - component: Select
+          name: select
+          layout:
+            horizontalAlign: end
+        - component: TextField
+          name: textField2
+          layout:
+            horizontalAlign: center
+        - component: Button
+          name: button2
+          props:
+            content: Modifier
+    - component: PageRow
+      name: pageRow3
+      props:
+        justifyContent: start
+      children:
+        - component: PageColumn
+          name: pageColumn2
+          layout:
+            columnSize: 1
+          children:
+            - component: Text
+              name: text4
+              layout:
+                columnSize: 1
+                horizontalAlign: center
+              props:
+                value: modifier statut d'une tâche
+            - component: PageRow
+              name: pageRow4
+              props:
+                justifyContent: start
+              children:
+                - component: Select
+                  name: select1
+                  layout:
+                    horizontalAlign: end
+                - component: Checkbox
+                  name: switch1
+                  props:
+                    mode: switch
+                    label: Statut
+    - component: Text
+      name: text5
+      props:
+        value: Suprimer une tâche
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow6
+      props:
+        justifyContent: start
+      children:
+        - component: Select
+          name: select2
+          layout:
+            horizontalAlign: end
+        - component: Button
+          name: button3
+          props:
+            content: Suprimer
+    - component: Text
+      name: text6
+      props:
+        value: Creer une sous tâche
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow7
+      props:
+        justifyContent: start
+      children:
+        - component: TextField
+          name: textField5
+          layout:
+            horizontalAlign: end
+        - component: Button
+          name: button4
+          props:
+            content: Creer
+    - component: Text
+      name: text9
+      props:
+        value: modifier une sous tâche
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow9
+      props:
+        justifyContent: start
+      children:
+        - component: Select
+          name: select3
+          layout:
+            horizontalAlign: end
+        - component: TextField
+          name: textField8
+          layout:
+            horizontalAlign: center
+        - component: Button
+          name: button5
+          props:
+            content: Modifier
+    - component: Text
+      name: text10
+      props:
+        value: modifier statut
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow10
+      props:
+        justifyContent: start
+      children:
+        - component: Select
+          name: select4
+          layout:
+            horizontalAlign: end
+        - component: Checkbox
+          name: switch2
+          props:
+            mode: switch
+            label: Statut
+    - component: Text
+      name: text11
+      props:
+        value: Surpimer une sous-tâche
+      layout:
+        horizontalAlign: center
+    - component: PageRow
+      name: pageRow11
+      props:
+        justifyContent: start
+      children:
+        - component: Select
+          name: select5
+          layout:
+            horizontalAlign: end
+        - component: Button
+          name: button6
+          props:
+            content: Suprimer
+  queries:
+    - name: query
+      mode: query
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.url
+        headers: []
+        method: GET
+        searchParams: []
+      parameters:
+        - name: url
+          value:
+            $$env: PG_lien
+        - name: cle
+          value:
+            $$env: PG_cle
